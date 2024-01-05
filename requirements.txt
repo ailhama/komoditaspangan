@@ -3,4 +3,3 @@ pandas==1.5.3
 scikit-learn
 pip==23.1.2
 Flask
-pickle

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediksi Harga Komoditas Pangan</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+  <div class="container contact-form">
+    <div class="contact-image">
+      <img src="/static/komoditaspangan.jpg" alt="komoditaspangan">
+    </div>
+    <form method="post" action="{{url_for('predict')}}" id="predictionForm">
+      <h3>Prediksi Harga Komoditas Pangan</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="bulan">Pilih Bulan</label>
+            <select name="bulan" id="bulan" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="1">Januari</option>
+              <option value="2">Februari</option>
+              <option value="3">Maret</option>
+              <option value="4">April</option>
+              <option value="5">Mei</option>
+              <option value="6">Juni</option>
+              <option value="7">Juli</option>
+              <option value="8">Agustus</option>
+              <option value="9">September</option>
+              <option value="10">Oktober</option>
+              <option value="11">November</option>
+              <option value="12">Desember</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="minggu">Pilih Minggu</label>
+            <select name="minggu" id="minggu" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="komoditas">Pilih Komoditas</label>
+            <select name="komoditas" id="komoditas" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Beras Premium">Beras Premium</option>
+              <option value="Beras Medium">Beras Medium</option>
+              <option value="Minyak Goreng Curah">Minyak Goreng Curah</option>
+              <option value="Gula Pasir">Gula Pasir</option>
+              <option value="Terigu Segitiga Biru">Terigu Segitiga Biru</option>
+              <option value="Bawang Merah">Bawang Merah</option>
+              <option value="Bawang Putih">Bawang Putih</option>
+              <option value="Cabe Rawit Merah">Cabe Rawit Merah</option>
+              <option value="Cabe Merah Keriting">Cabe Merah Keriting</option>
+              <option value="Cabe Besar">Cabe Besar</option>
+              <option value="Daging Sapi">Daging Sapi</option>
+              <option value="Daging Ayam Ras">Daging Ayam Ras</option>
+              <option value="Telur Ayam Ras">Telur Ayam Ras</option>
+              <option value="Ikan">Ikan</option>
+              <option value="Kedelai Biji Kering">Kedelai Biji Kering</option>
+              <option value="Jagung Pipilan Kering">Jagung Pipilan Kering</option>
+              <option value="Jagung Manis">Jagung Manis</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="submit" name="btnSubmit" class="btnContact" value="Prediksi" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5 class="hasilprediksi">Harga Prediksi {{ request.form['komoditas'] }}</h5>
+            <textarea name="txtMsg" class="form-control" placeholder="Hasil Prediksi"
+              style="width: 100%; height: 100px;">Rp {{ hasil }}</textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>
